@@ -9,6 +9,7 @@ function Sidebar() {
 
       <div className="sidebar__top">
         <h3>Levani Papashvil's</h3>
+        <ExpandMoreIcon />
       </div>
     </div>
   );
