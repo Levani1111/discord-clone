@@ -3,6 +3,9 @@ import "./ChatHeader.css";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import EditLocationIcon from "@material-ui/icons/EditLocation";
+import SearchIcon from "@material-ui/icons/Search";
+import SendIcon from "@material-ui/icons/Send";
+import HelpIcon from "@material-ui/icons/Help";
 
 function ChatHeader() {
   return (
@@ -19,6 +22,13 @@ function ChatHeader() {
         <NotificationsIcon />
         <EditLocationIcon />
         <PeopleAltIcon />
+
+        <div className="chatHeader__search">
+          <input placeholder="Search" />
+          <SearchIcon />
+        </div>
+        <SendIcon />
+        <HelpIcon />
       </div>
     </div>
   );
