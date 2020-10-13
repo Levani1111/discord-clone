@@ -10,7 +10,6 @@ import HelpIcon from "@material-ui/icons/Help";
 function ChatHeader() {
   return (
     <div className="chatHeader">
-      <h1>chatHeader</h1>
       <div className="chatHeader__left">
         <h3>
           <span className="chatHeader__hash">#</span>
