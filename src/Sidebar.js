@@ -49,7 +49,7 @@ function Sidebar() {
         </div>
       </div>
       <div className="sidebar__profile">
-        <Avatar />
+        <Avatar src="https://levanipapashvili.com/wp-content/uploads/2020/04/Levani-papashvili.png" />
         <div className="sidebar__profileInfo">
           <h3>Levani Papashvili</h3>
           <p>#thisIsMyID</p>
