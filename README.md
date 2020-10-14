@@ -5,7 +5,7 @@
 ### Front End
 
 - Redux
-- material-ui
+- material-ui-Icons
 
 ### Back End
 
