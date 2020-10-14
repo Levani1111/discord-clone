@@ -27,6 +27,7 @@ function App() {
         );
       } else {
         //  the user is loogged out
+        dispatch(logout());
       }
     });
   }, []);
