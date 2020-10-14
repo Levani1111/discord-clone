@@ -1,15 +1,25 @@
 import React from "react";
-import { Counter } from "./features/Counter";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 import "./App.css";
 import Sidebar from "./Sidebar";
 import Chat from "./Chat";
+import Login from "./Login";
 
 function App() {
+  const user = useSelector(selectUser);
+
   return (
     // BEM  naming convention
     <div className="app">
-      <Sidebar />
-      <Chat />
+      {user ? (
+        <>
+          <Sidebar />
+          <Chat />
+        </>
+      ) : (
+        <Login />
+      )}
     </div>
   );
 }
