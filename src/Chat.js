@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Chat.css";
 import Message from "./Message";
 import ChatHeader from "./ChatHeader";
@@ -9,21 +9,35 @@ import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 import { selectChannelId, selectChannelName } from "./features/appSlice";
 import { selectUser } from "./features/userSlice";
 import { useSelector } from "react-redux";
+import db from "./firebase";
 
 function Chat() {
   const user = useSelector(selectUser);
   const channelId = useSelector(selectChannelId);
   const channelName = useSelector(selectChannelName);
   const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    if (channelId) {
+      db.collection("channels")
+        .doc(channelId)
+        .collection("message")
+        .orderBy("timestamp", "desc")
+        .onShnapshot((snapshot) =>
+          setMessages(snapshot.docs.map((doc) => doc.data()))
+        );
+    }
+  }, []);
 
   return (
     <div className="chat">
       <ChatHeader channelName={channelName} />
 
       <div className="chat__messages">
-        <Message />
-        <Message />
-        <Message />
+        {messages.map((message) => (
+          <Message />
+        ))}
       </div>
 
       <div className="chat__input">
