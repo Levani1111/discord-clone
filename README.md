@@ -8,7 +8,7 @@
 - Redux
 - material-ui-Icons
 - Html
-- CSS-responsive
+- Css-responsive
 - JavaScript
 
 ##### Back End
