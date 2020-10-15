@@ -10,6 +10,7 @@ import { selectChannelId, selectChannelName } from "./features/appSlice";
 import { selectUser } from "./features/userSlice";
 import { useSelector } from "react-redux";
 import db from "./firebase";
+import firebase from "firebase";
 
 function Chat() {
   const user = useSelector(selectUser);
@@ -29,6 +30,16 @@ function Chat() {
         );
     }
   }, []);
+
+  const sendMessage = (e) => {
+    e.preventDefault();
+
+    db.collection("channels").doc(channelId).collection("messages").add({
+      timestamp: firebase.firestore.FiledValue.serverTimestamp(),
+      message: input,
+      user: user,
+    });
+  };
 
   return (
     <div className="chat">
@@ -53,6 +64,7 @@ function Chat() {
             disabled={!channelId}
             className="chat__inputButton"
             type="submit"
+            onClick={sendMessage}
           >
             Send Message
           </button>
