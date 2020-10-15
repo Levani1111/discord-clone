@@ -1,6 +1,6 @@
 # Discord-clone with Redux
 
-## TECH
+### TECH
 
 ##### Front End
 
@@ -16,3 +16,9 @@
 - Firebase
 - Google's authentication
 - Deploy on Firebase
+
+### Deployment
+
+### Author
+
+Levani Papashvili @2020
