@@ -2,6 +2,8 @@ import React from "react";
 import "./Message.css";
 import { Avatar } from "@material-ui/core";
 
+// Message
+
 function Message({ timestamp, user, message }) {
   return (
     <div className="message">
@@ -10,10 +12,10 @@ function Message({ timestamp, user, message }) {
         <h4>
           {user.displayName}
           <span className="message__timestamp">
-            {new Date(timestamp?.toDate()).toUTCSstring()}
+            {new Date(timestamp?.toDate()).toUTCString()}
           </span>
         </h4>
-        <p>This is a message</p>
+        <p>{message}</p>
       </div>
     </div>
   );

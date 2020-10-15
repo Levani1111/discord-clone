@@ -2,12 +2,17 @@
 
 ## TECH
 
-### Front End
+##### Front End
 
+- React
 - Redux
 - material-ui-Icons
+- Html
+- CSS-responsive
+- JavaScript
 
-### Back End
+##### Back End
 
 - Firebase
-- google's authentication
+- Google's authentication
+- Deploy on Firebase
